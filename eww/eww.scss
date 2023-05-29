@@ -1,15 +1,15 @@
 // Variable Color's
-$background: #f1ebff;
-$foreground: #1f001f;
+$background: rgba(0, 0, 15, 0.85);
+$foreground: #ffe1ff;
 
-$black: #d0d0f0;
-$gray: #080808;
+$black: #2f2f3f;
+$gray: #f8f8f8;
 $red: #ff0069;
 $green: #00ff94;
 $yellow: #37ff00;
-$blue: #009cf0;
-$magenta: #814181;
-$cyan: #0068ad;
+$blue: #11acff;
+$magenta: #ff81b8;
+$cyan: #53b9ff;
 
 .bar{
     background: $background;
@@ -81,7 +81,7 @@ $cyan: #0068ad;
     padding: 3px;
 
     .button{
-        font-size: 30px;
+        font-size: 20px;
         box-shadow: none;
         border: none;
         background: $black;

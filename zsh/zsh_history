@@ -10237,3 +10237,27 @@ ssh-keygen -t rsa
 : 1685327119:0;cd ..
 : 1685327124:0;git rm --cached hypr/contrib
 : 1685327135:0;git commit -m "files" alacritty/ anyrun/ eww/ hypr/ zsh/ README.org
+: 1685327143:0;git push
+: 1685327220:0;git push --set-upstream origin master
+: 1685327230:0;pass -c Github/personalaccesstoken
+: 1685327274:0;git config --global http.postBuffer 157286400
+: 1685327277:0;git push --set-upstream origin master
+: 1685327288:0;pass -c Github/personalaccesstoken
+: 1685327290:0;git push --set-upstream origin master
+: 1685366499:0;cd ~/.config
+: 1685366502:0;git clone https://github.com/rafaelmardojai/firefox-gnome-theme && cd firefox-gnome-theme
+: 1685366511:0;./scripts/install.sh
+: 1685366598:0;killall firefox
+: 1685366625:0;cd ~/.mozilla/firefox
+: 1685366632:0;cat profiles.ini
+: 1685366646:0;cd 5knts894.default
+: 1685366651:0;cd chrome
+: 1685366655:0;cd firefox-gnome-theme
+: 1685366657:0;cd
+: 1685366691:0;rm -IR ~/.mozilla/firefox
+: 1685366695:0;y
+: 1685366793:0;pass -c Browsers/Firefox
+: 1685366882:0;yain thunderbird-nightly-bin
+: 1685367583:0;e ~/.config/alacritty/alacritty.yml
+: 1685367647:0;cd .config
+: 1685367669:0;git commit -m "dark mode stuff" alacritty/ eww/ zsh/

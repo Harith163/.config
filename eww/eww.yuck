@@ -75,7 +75,8 @@
                 :spacing 10
                 (button :class "button" :onclick "firefox" "🌎")
                 (button :class "button" :onclick "emacsclient -c &" "📚")
-                (button :class "button" :onclick "alacritty &" "⌨")))
+                (button :class "button" :onclick "alacritty &" "⌨")
+                (button :class "button" :onclick "thunderbird &" "📬")))
 
 (defwindow bar
            :class "bar"
