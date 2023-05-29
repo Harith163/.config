@@ -10224,3 +10224,16 @@ ssh-keygen -t rsa
 : 1685326932:0;git rm --cached hypr/contrib
 : 1685326938:0;git rm --cached hypr/contrib -f
 : 1685326981:0;git commit -m "files" alacritty/ anyrun/ eww/ hypr/ zsh/ README.org
+: 1685326985:0;git push
+: 1685327060:0;e .git/config
+: 1685327079:0;cd .git
+: 1685327085:0;cd ..
+: 1685327085:0;ll
+: 1685327100:0;cd hypr
+: 1685327102:0;cd contrib
+: 1685327103:0;ls
+: 1685327106:0;cd ..
+: 1685327114:0;rm -IR contrib
+: 1685327119:0;cd ..
+: 1685327124:0;git rm --cached hypr/contrib
+: 1685327135:0;git commit -m "files" alacritty/ anyrun/ eww/ hypr/ zsh/ README.org
