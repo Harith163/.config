@@ -1,0 +1,92 @@
+// Variable Color's
+$background: #f1ebff;
+$foreground: #1f001f;
+
+$black: #d0d0f0;
+$gray: #080808;
+$red: #ff0069;
+$green: #00ff94;
+$yellow: #37ff00;
+$blue: #009cf0;
+$magenta: #814181;
+$cyan: #0068ad;
+
+.bar{
+    background: $background;
+    color: $foreground;
+    border-radius: 10px;
+}
+
+.icon{
+    color: $magenta;
+}
+
+.inset-datetime{
+    padding: 3px;
+    .inset-time{
+        background: $black;
+        color: $gray;
+        border-radius: 10px;
+
+        .icon{
+             font-size: 18px;
+        }
+        .time{
+            font-weight: bold;
+            font-size: 15px;
+        }
+    }
+    
+    .inset-date{
+        background: $black;
+        color: $gray;
+        padding: 5px;
+        border-radius: 10px;
+
+        .icon{
+            font-size: 18px;
+        }    
+        .cal{
+            font-weight: bold;
+            font-size: 15px;
+        }
+    }
+}
+
+.inset-volume{
+    padding: 3px;
+    padding-top: 200px;
+    
+    .volume{
+        background: $black;
+        color: $foreground;
+        border-radius: 10px;
+        font-weight: bold;
+
+        .volume-scale trough{
+            border-color: $magenta;
+            min-height: 150px;
+        }
+
+        .volume-scale slider{
+            background: $cyan;
+            box-shadow: none;
+            border: none;
+            border-radius: 10px;
+        }
+    }
+}
+
+.inset-launcher{
+    padding: 3px;
+
+    .button{
+        font-size: 30px;
+        box-shadow: none;
+        border: none;
+        background: $black;
+        color: $cyan;
+        border-radius: 10px;
+        padding: 5px;
+    }
+}

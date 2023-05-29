@@ -1,0 +1,6 @@
+* Included in this repo
+** Alacritty
+** Anyrun
+** eww
+** hypr
+** zsh

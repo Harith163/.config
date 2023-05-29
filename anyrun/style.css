@@ -1,0 +1,34 @@
+#window {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+box#main {
+    border-radius: 15px;
+    background-color: #f1ebff;
+}
+
+list#main {
+  border-radius: 15px;
+  background-color: #f1ebff;
+}
+
+list#plugin {
+    background-color: #f1ebff;
+}
+
+label#match-desc {
+    font-size: 15px;
+    background-color: #efcfef;
+}
+
+label#plugin {
+  font-size: 15px;
+}
+
+#entry {
+    background: #f1ebff;
+    text-decoration-color: #1f001f;
+    border-style: solid;
+    border-color: #b59ce3;
+    border-width: 2;
+}

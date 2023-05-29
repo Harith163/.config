@@ -1,0 +1,102 @@
+# -*- mode: sh; -*-
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+export TERM="xterm-256color"
+
+# Path to your oh-my-zsh installation.
+ZSH=$HOME/.config/oh-my-zsh
+
+HISTFILE=${ZDOTDIR:-$HOME}/.config/zsh/zsh_history
+ZSH_COMPDUMP=$HOME/.config/zsh/zcompdump
+
+# Uncomment the following line to use case-sensitive completion.
+CASE_SENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+DISABLE_AUTO_UPDATE="true"
+
+plugins=(
+    git
+    zsh-completions
+    zsh-autosuggestions
+    emacs
+    battery
+    zsh_reload
+    extract
+    archlinux
+    z
+    common-aliases
+)
+
+# User configuration
+export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='emacs'
+else
+  export EDITOR='emacsclient'
+fi
+
+#change cd path variable
+export CDPATH="$CDPATH:$HOME/Documents/:$HOME/Documents/life"
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
+
+source $ZSH/oh-my-zsh.sh
+
+source $HOME/.config/zsh/aliases
+
+zstyle ':completion:*' completer _expand_alias _complete _ignored
+zstyle ':completion:*:processes' command 'NOCOLORS=1 ps -U $(whoami)|sed "/ps/d"'
+zstyle ':completion:*:processes' insert-ids menu yes select
+zstyle ':completion:*:processes-names' command 'NOCOLORS=1 ps xho command|sed "s/://g"'
+zstyle ':completion:*:processes' sort false
+
+bindkey '^R' history-incremental-search-backward
+
+#using bat to make man pages better
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/auto-ls.zsh
+
+bindkey -e
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+#libvterm integration
+function vterm_printf(){
+    if [ -n "$TMUX" ]; then
+        # Tell tmux to pass the escape sequences through
+        # (Source: http://permalink.gmane.org/gmane.comp.terminal-emulators.tmux.user/1324)
+        printf "\ePtmux;\e\e]%s\007\e\\" "$1"
+    elif [ "${TERM%%-*}" = "screen" ]; then
+        # GNU screen (screen, screen-256color, screen-256color-bce)
+        printf "\eP\e]%s\007\e\\" "$1"
+    else
+        printf "\e]%s\e\\" "$1"
+    fi
+}
+
+#Remove xsession-errors and xsession-errors-old
+if [ ! -h $HOME/.xsession-errors ]; then
+ /bin/rm $HOME/.xsession-errors
+ ln -s /dev/null $HOME/.xsession-errors
+fi
+
+osfetch-rs
